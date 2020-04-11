@@ -1,0 +1,44 @@
+.instructions-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+
+  p {
+    margin: 7px;
+    font-size: 17px;
+  }
+
+  .name {
+    font-weight: bold;
+    font-size: 60px;
+    margin: 20px;
+  }
+
+  .button-instructions {
+    padding: 10px 30px;
+    background: white;
+    border: 2px solid #ff5454;
+    font-size: 20px;
+    color: #ff3535;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s all;
+    box-shadow: 2px 2px 5px 2px grey;
+    margin-top: 40px;
+  
+    &:hover {
+      background: #ff5454;
+      color: white;
+      box-shadow: none;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.instructions-wrapper.hide {
+  display: none;
+}

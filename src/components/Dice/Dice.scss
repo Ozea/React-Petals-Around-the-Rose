@@ -1,0 +1,110 @@
+.wrap {
+  justify-content: space-between;
+  display: flex;
+  height: 90px;
+  width: 90px;
+  padding: 5px;
+
+  .center, .left, .right {
+    flex-direction: column;
+    display: flex;
+    padding: 5px;
+    width: 33%;
+    
+    .circle {
+      background: black;
+      border-radius: 50%;
+      height: 23px;
+      width: 23px;
+    }
+  }
+}
+
+.wrap.three, .wrap.five {
+  padding: 5px 1px;
+}
+
+.one .circle {
+  margin: auto 0;
+}
+
+.two .right .circle {
+  margin-top: auto;
+}
+
+.three {
+  .left .circle {
+    margin-bottom: auto;
+  }
+
+  .center .circle {
+    margin: auto 0;
+  }
+
+  .right .circle {
+    margin-top: auto;
+  }
+}
+
+.four {
+  .left .circle + .circle, .right .circle + .circle {
+    margin-top: auto;
+  }
+}
+
+.five {
+  .center {
+    margin: auto 0;
+  }
+
+  .left .circle + .circle, .right .circle + .circle {
+    margin-top: auto;
+  }
+}
+
+.six .circle {
+  margin: auto 0;
+}
+
+.scene {
+  width: 100px;
+  height: 100px;
+  margin: 20px 30px;
+  perspective: 250px;
+}
+
+.dice {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+  transition: transform 1.5s;
+}
+
+.dice.show-front  { transform: translateZ(-50px) rotateY(   0deg); }
+.dice.show-right  { transform: translateZ(-50px) rotateY( -90deg); }
+.dice.show-back   { transform: translateZ(-50px) rotateY(-180deg); }
+.dice.show-left   { transform: translateZ(-50px) rotateY(  90deg); }
+.dice.show-top    { transform: translateZ(-50px) rotateX( -90deg); }
+.dice.show-bottom { transform: translateZ(-50px) rotateX(  90deg); }
+
+.dice-face {
+  background: white;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  line-height: 100px;
+  font-size: 10px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+}
+
+.dice-front   { transform: rotateY(  0deg) translateZ(50px); }
+.dice-back    { transform: rotateY( 90deg) translateZ(50px); }
+.dice-right   { transform: rotateY(180deg) translateZ(50px); }
+.dice-left    { transform: rotateY(-90deg) translateZ(50px); }
+.dice-top     { transform: rotateX( 90deg) translateZ(50px); }
+.dice-bottom  { transform: rotateX(-90deg) translateZ(50px); }
